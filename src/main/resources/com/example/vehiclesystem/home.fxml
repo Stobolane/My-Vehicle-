@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language "javascript"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.vehiclesystem.controllers.HomeController"
+            style="-fx-background-color: #121212;">
+
+    <top>
+        <HBox style="-fx-background-color: #000000; -fx-padding: 20;" alignment="CENTER">
+            <Label text="VEHICLE RENTAL SYSTEM"
+                   style="-fx-text-fill: #ffffff; -fx-font-size: 28; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="30" style="-fx-padding: 40;">
+            <Text text="Welcome to Our Vehicle Rental System"
+                  style="-fx-font-size: 32; -fx-fill: #ffffff; -fx-font-weight: bold;"/>
+
+            <Text text="Premium vehicles at your fingertips"
+                  style="-fx-font-size: 18; -fx-fill: #b0b0b0;"/>
+
+            <HBox spacing="30" alignment="CENTER" style="-fx-padding: 20;">
+                <Button text="LOGIN"
+                        style="-fx-background-color: #6200ee; -fx-text-fill: white; -fx-font-weight: bold;
+                              -fx-min-width: 150; -fx-min-height: 45; -fx-background-radius: 5;"
+                        onAction="#goToLogin"/>
+
+                <Button text="REGISTER"
+                        style="-fx-background-color: #03dac6; -fx-text-fill: #000000; -fx-font-weight: bold;
+                              -fx-min-width: 150; -fx-min-height: 45; -fx-background-radius: 5;"
+                        onAction="#goToRegister"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox style="-fx-background-color: rgba(0,0,0,0.7); -fx-padding: 15;" alignment="CENTER">
+            <Label text="© 2023 VEHICLE RENTAL SYSTEM | ALL RIGHTS RESERVED"
+                   style="-fx-text-fill: #a0a0a0; -fx-font-size: 12;"/>
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.vehiclesystem.controllers.PaymentsController">
+    <top>
+        <Label text="Payments"
+               style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-padding: 10 0 10 10;"/>
+    </top>
+    <center>
+        <TableView fx:id="paymentsTable" prefHeight="400" prefWidth="600">
+            <columns>
+                <TableColumn text="Transaction ID" fx:id="transIdCol" prefWidth="120"/>
+                <TableColumn text="Customer" fx:id="customerCol" prefWidth="150"/>
+                <TableColumn text="Amount" fx:id="amountCol" prefWidth="100"/>
+                <TableColumn text="Status" fx:id="statusCol" prefWidth="100"/>
+                <TableColumn text="Date" fx:id="dateCol" prefWidth="130"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

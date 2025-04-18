@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.vehiclesystem.ActivityLogs">
+    <top>
+        <Label text="Activity Logs"
+               style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-padding: 10 0 10 10;"/>
+    </top>
+    <center>
+        <TableView fx:id="logsTable" prefHeight="400" prefWidth="600">
+            <columns>
+                <TableColumn text="Date &amp; Time" fx:id="dateTimeCol" prefWidth="150"/>
+                <TableColumn text="User" fx:id="userCol" prefWidth="150"/>
+                <TableColumn text="Action" fx:id="actionCol" prefWidth="300"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.vehiclesystem.AdminUserController"
+      spacing="10" style="-fx-padding: 20;">
+    <Label text="User Management" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Add User" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" onAction="#handleAddUser"/>
+        <Button text="Edit User" style="-fx-background-color: #3498db; -fx-text-fill: white;" onAction="#handleEditUser"/>
+        <Button text="Delete User" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" onAction="#handleDeleteUser"/>
+        <TextField fx:id="searchField" promptText="Search users..."/>
+        <Button text="Search" onAction="#handleSearch"/>
+    </HBox>
+
+    <TableView fx:id="userTable">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn" prefWidth="50"/>
+            <TableColumn text="Username" fx:id="usernameColumn" prefWidth="120"/>
+            <TableColumn text="Full Name" fx:id="nameColumn" prefWidth="150"/>
+            <TableColumn text="Email" fx:id="emailColumn" prefWidth="150"/>
+            <TableColumn text="Role" fx:id="roleColumn" prefWidth="80"/>
+            <TableColumn text="Created" fx:id="createdColumn" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vehiclesystem.controllers.AdminDash">
+
+   
+
+    <!-- Main Content -->
+    <BorderPane>
+        <top>
+            <VBox>
+                <!-- Header Bar -->
+                <HBox style="-fx-background-color: rgba(0,0,0,0.8); -fx-padding: 15; -fx-alignment: CENTER_LEFT; -fx-spacing: 20;">
+                    <Label style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;" text="Admin Dashboard" />
+                    <Label fx:id="welcomeLabel" style="-fx-text-fill: white; -fx-font-size: 16;" />
+                    <Pane HBox.hgrow="ALWAYS" />
+                    <Button onAction="#handleLogout" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="Logout" />
+                </HBox>
+
+                <!-- Horizontal Navigation -->
+                <HBox style="-fx-background-color: rgba(26,26,26,0.8); -fx-padding: 10; -fx-spacing: 10; -fx-alignment: CENTER;">
+                    <Button onAction="#showDashboard" style="-fx-background-color: #2a2a2a; -fx-text-fill: white; -fx-font-size: 14; -fx-padding: 10 20; -fx-background-radius: 5; -fx-min-width: 150;" text="Dashboard" />
+                    <Button onAction="#showVehicleManagement" style="-fx-background-color: #2a2a2a; -fx-text-fill: white; -fx-font-size: 14; -fx-padding: 10 20; -fx-background-radius: 5; -fx-min-width: 150;" text="Manage Vehicles" />
+                    <Button onAction="#showCustomerManagement" style="-fx-background-color: #2a2a2a; -fx-text-fill: white; -fx-font-size: 14; -fx-padding: 10 20; -fx-background-radius: 5; -fx-min-width: 150;" text="Manage Customers" />
+                    <Button onAction="#showUserManagement" style="-fx-background-color: #2a2a2a; -fx-text-fill: white; -fx-font-size: 14; -fx-padding: 10 20; -fx-background-radius: 5; -fx-min-width: 150;" text="Manage Users" />
+                    <Button onAction="#showReports" style="-fx-background-color: #2a2a2a; -fx-text-fill: white; -fx-font-size: 14; -fx-padding: 10 20; -fx-background-radius: 5; -fx-min-width: 150;" text="Reports" />
+                    <Button onAction="#showActivityLogs" style="-fx-background-color: #2a2a2a; -fx-text-fill: white; -fx-font-size: 14; -fx-padding: 10 20; -fx-background-radius: 5; -fx-min-width: 150;" text="Activity Logs" />
+                    <Button onAction="#showPayments" style="-fx-background-color: #2a2a2a; -fx-text-fill: white; -fx-font-size: 14; -fx-padding: 10 20; -fx-background-radius: 5; -fx-min-width: 150;" text="Payments" />
+                </HBox>
+            </VBox>
+        </top>
+
+        <center>
+            <StackPane fx:id="contentPane" style="-fx-background-color: rgba(30,30,30,0.85); -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 15, 0, 0, 0);">
+                <!-- Default content -->
+                <VBox alignment="CENTER" spacing="20">
+                    <Text style="-fx-font-size: 28; -fx-fill: white; -fx-font-weight: bold;" />
+               <ImageView fitHeight="389.0" fitWidth="914.0">
+                  <image>
+                     <Image url="@images/motor2.jpg" />
+                  </image>
+               </ImageView>
+                    <Text style="-fx-font-size: 16; -fx-fill: white;" />
+                </VBox>
+            </StackPane>
+        </center>
+
+        <bottom>
+            <HBox style="-fx-background-color: rgba(0,0,0,0.7); -fx-padding: 10; -fx-alignment: CENTER;">
+                <Label style="-fx-text-fill: white; -fx-font-size: 12;" text="© 2023 Vehicle System - Admin Panel" />
+            </HBox>
+        </bottom>
+    </BorderPane>
+</StackPane>

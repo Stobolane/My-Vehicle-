@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:controller="com.example.vehiclesystem.AdminCustomersController" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      spacing="10" style="-fx-padding: 20;">
+    <Label text="Customer Management" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Add Customer" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" onAction="#handleAddCustomer"/>
+        <Button text="Edit Customer" style="-fx-background-color: #3498db; -fx-text-fill: white;" onAction="#handleEditCustomer"/>
+        <Button text="Delete Customer" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" onAction="#handleDeleteCustomer"/>
+        <TextField fx:id="searchField" promptText="Search customers..."/>
+        <Button text="Search" onAction="#handleSearch"/>
+    </HBox>
+
+    <TableView fx:id="customerTable">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn" prefWidth="50"/>
+            <TableColumn text="Name" fx:id="nameColumn" prefWidth="150"/>
+            <TableColumn text="Email" fx:id="emailColumn" prefWidth="150"/>
+            <TableColumn text="Phone" fx:id="phoneColumn" prefWidth="100"/>
+            <TableColumn text="License" fx:id="licenseColumn" prefWidth="150"/>
+            <TableColumn text="Rentals" fx:id="rentalsColumn" prefWidth="60"/>
+        </columns>
+    </TableView>
+</VBox>

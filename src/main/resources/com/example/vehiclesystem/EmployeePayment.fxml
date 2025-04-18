@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.vehiclesystem.EmployeePayment"
+      spacing="10" style="-fx-padding: 15;">
+
+    <!-- Search Section -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Search:" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="searchField" promptText="Search by customer, method or status"
+                   style="-fx-pref-width: 300;"/>
+        <Button text="Search" onAction="#handleSearch"/>
+        <Button text="View All" onAction="#handleViewHistory"/>
+    </HBox>
+
+    <!-- Payment Table -->
+    <TableView fx:id="paymentTable" style="-fx-pref-height: 300;">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="bookingIdColumn" text="Booking ID" prefWidth="80"/>
+            <TableColumn fx:id="customerColumn" text="Customer" prefWidth="150"/>
+            <TableColumn fx:id="amountColumn" text="Amount" prefWidth="80"/>
+            <TableColumn fx:id="dateColumn" text="Date" prefWidth="120"/>
+            <TableColumn fx:id="methodColumn" text="Method" prefWidth="100"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="80"/>
+        </columns>
+    </TableView>
+
+    <!-- Action Buttons -->
+    <HBox spacing="10">
+        <Button text="Process Payment" onAction="#handleProcessPayment"
+                style="-fx-base: #27ae60; -fx-text-fill: white;"/>
+    </HBox>
+
+    <!-- Payment Form (Initially hidden) -->
+    <GridPane fx:id="paymentForm" hgap="10" vgap="10" style="-fx-padding: 15; -fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5;" visible="false">
+        <Label text="Payment Details" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" style="-fx-font-weight: bold; -fx-font-size: 14;"/>
+
+        <Label text="Booking ID:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Label fx:id="bookingIdLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Customer:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Label fx:id="customerNameLabel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Amount Due:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <Label fx:id="amountDueLabel" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Payment Method:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <ComboBox fx:id="paymentMethodCombo" GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-pref-width: 150;"/>
+
+        <Label text="Amount Paid:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <TextField fx:id="amountPaidField" GridPane.columnIndex="1" GridPane.rowIndex="5" style="-fx-pref-width: 150;"/>
+
+        <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <Button text="Confirm" onAction="#handleConfirmPayment" style="-fx-base: #27ae60; -fx-text-fill: white;"/>
+            <Button text="Cancel" onAction="#handleCancelPayment" style="-fx-base: #e74c3c; -fx-text-fill: white;"/>
+        </HBox>
+    </GridPane>
+
+</VBox>

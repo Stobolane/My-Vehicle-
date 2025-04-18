@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+
+<VBox fx:controller="com.example.vehiclesystem.AdminReportsController" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      spacing="10" style="-fx-padding: 20;">
+    <Label text="Reports Dashboard" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Revenue Report" style="-fx-background-color: #3498db; -fx-text-fill: white;" onAction="#showRevenueReport"/>
+        <Button text="Vehicle Utilization" style="-fx-background-color: #3498db; -fx-text-fill: white;" onAction="#showUtilizationReport"/>
+        <Button text="Customer Activity" style="-fx-background-color: #3498db; -fx-text-fill: white;" onAction="#showActivityReport"/>
+        <Button text="Export to PDF" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" onAction="#handleExportPDF"/>
+    </HBox>
+
+    <StackPane fx:id="chartPane" style="-fx-padding: 10;">
+        <BarChart fx:id="revenueChart" title="Monthly Revenue" animated="false" visible="false">
+            <xAxis>
+                <CategoryAxis label="Month" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Amount ($)" />
+            </yAxis>
+        </BarChart>
+
+        <PieChart fx:id="utilizationChart" title="Vehicle Utilization" visible="false"/>
+
+        <LineChart fx:id="activityChart" title="Customer Activity" visible="false">
+            <xAxis>
+                <CategoryAxis label="Month" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Rentals" />
+            </yAxis>
+        </LineChart>
+    </StackPane>
+</VBox>
